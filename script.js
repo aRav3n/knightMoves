@@ -1,12 +1,18 @@
+const chessSquare = function (i, j) {
+  const possibleMoves = [];
+  return { i, j, possibleMoves };
+};
+
 // board = 2D array 8 x 8
 const makeBoard = function () {
   const board = [];
   for (let i = 0; i < 8; i++) {
     board[i] = [];
     for (let j = 0; j < 8; j++) {
-      board[i][j] = true;
+      board[i][j] = chessSquare(i, j);
     }
   }
+  console.log(board);
   return board;
 };
 
@@ -18,7 +24,7 @@ const possibleMoves = function (i, j) {
   }
 };
 
-possibleMoves(1, 1);
+makeBoard();
 
 // shortestPath() function to find shortest path between current location and desired location
 
