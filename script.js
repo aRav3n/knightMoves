@@ -1,19 +1,24 @@
 // board = 2D array 8 x 8
 const makeBoard = function () {
-  const column = Array(8);
-  for (let i = 0; i < column.length; i++) {
-    column[i] = 0;
-  }
-  const board = Array(8);
-  for (let i = 0; i < board.length; i++) {
-    board[i] = column;
+  const board = [];
+  for (let i = 0; i < 8; i++) {
+    board[i] = [];
+    for (let j = 0; j < 8; j++) {
+      board[i][j] = true;
+    }
   }
   return board;
 };
 
-const gameBoard = makeBoard();
-
 // possibleMoves()
+const possibleMoves = function (i, j) {
+  const gameBoard = makeBoard();
+  if (gameBoard[i][j] === undefined) {
+    console.log(`starting location [${i}][${j}] is not valid`);
+  }
+};
+
+possibleMoves(1, 1);
 
 // shortestPath() function to find shortest path between current location and desired location
 
